@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. Почему код дает такие результаты?
+      // let a = 1,
+      //   b = 1,
+      //   c,
+      //   d;
+      // c = ++a;
+      // alert(c); // 2
+      // // переменная "c" присваивает инкремент от "а", т.е. увеличивается на единицу, на данном этапе с=2, а=2;
+
+      // d = b++;
+      // alert(d); // 1
+      // // переменная "d" присваивает переменную "b", а переменная "b" увеличивается на 1, на данном этапе b=2, d=1;
+
+      // c = 2 + ++a;
+      // alert(c); // 5
+      // // переменная "a" увеливается на 1, далее выполняется операция сложения и присвоение значения переменной "с", на данном этапе а=3, с= 5;
+
+      // d = 2 + b++;
+      // alert(d); // 4
+      // // переменная "b" увеливается на 1, переменная "d" присваивает значение от операции суммы (2+"b"), на данном этапе b=3, d=4;
+
+      // alert(a); // 3
+      // alert(b); // 3
+    </script>
+
+    <script>
+      //2. Чему равна переменная х?
+      // let a = 2;
+      // let x = 1 + (a *= 2);
+      // alert(x);
+      //  "a" умножается на 2 (а=а*2), далее присваивается значение от суммы. x=5;
+    </script>
+
+    <script>
+      //3. ...
+      // const a = 15;
+      // const b = 20;
+      // if (a >= 0 && b >= 0) {
+      //   // alert("Оба положительные! Разность:" + (a - b));
+      //   alert(`Оба положительные! Разность: ${a - b}`);
+      //   // alert("Имя пользователя: " + name + ", возраст:" + age); // ES5, устарело
+      //   // alert(`Имя пользователя: ${name}, возраст: ${age}`); // ES6, хорошо
+      // } else if (a < 0 && b < 0) {
+      //   // alert("Оба отрицательные! Произведение:" + a * b);
+      //   alert(`Оба отрицательные! Произведение: ${a * b}`);
+      // } else {
+      //   // alert("Знаки разные! Сумма:" + (a + b));
+      //   alert(`Знаки разные! Сумма: ${a + b}`);
+      // }
+    </script>
+
+    <script>
+      //4. Присвоить переменной а значение в промежутке [0...15];
+      // const a = 7;
+      // switch (a) {
+      //   case 0:
+      //     console.log("0");
+      //   case 1:
+      //     console.log("1");
+      //   case 2:
+      //     console.log("2");
+      //   case 3:
+      //     console.log("3");
+      //   case 4:
+      //     console.log("4");
+      //   case 5:
+      //     console.log("5");
+      //   case 6:
+      //     console.log("6");
+      //   case 7:
+      //     console.log("7");
+      //   case 8:
+      //     console.log("8");
+      //   case 9:
+      //     console.log("9");
+      //   case 10:
+      //     console.log("10");
+      //   case 11:
+      //     console.log("11");
+      //   case 12:
+      //     console.log("12");
+      //   case 13:
+      //     console.log("13");
+      //   case 14:
+      //     console.log("14");
+      //   case 15:
+      //     console.log("15");
+      //     break;
+      // }
+    </script>
+
+    <script>
+      //5.  Реализовать основные 4 арифметические операции в виде функции с 2-мя переменными (+return).
+      // ES5
+      // function sum(x, y) {
+      //   return x + y;
+      // }
+      // alert(sum(10, 20));
+
+      // ES6
+      const sum = (x, y) => {
+        return x + y;
+      };
+
+      const sumShort = (x, y) => x + y;
+
+      alert(sum(5, 10));
+      alert(sumShort(5, 10));
+
+      // function subtraction(x, y) {
+      //   return x - y;
+      // }
+      // alert(subtraction(10, 20));
+
+      // function multiply(x, y) {
+      //   return x * y;
+      // }
+      // alert(multiply(10, 20));
+
+      // function divide(x, y) {
+      //   if (y != 0) return x / y; // happy path
+      //   else return null; // corner case
+      // }
+      // alert(divide(10, 20));
+    </script>
+
+    <script>
+      // 6.Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), выполнить одну из арифметических операций и вернуть полученное значение.
+      // let arg1 = 10;
+      // let arg2 = 50;
+      // let operation = "divide";
+      function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+          case "sum":
+            return arg1 + arg2;
+          case "subtraction":
+            return arg1 - arg2;
+          case "myltiply":
+            return arg1 * arg2;
+          case "divide":
+            if (arg2 != 0) return arg1 / arg2;
+            else return null;
+          default:
+            return NaN;
+        }
+      }
+      // console.log("Результат операции:" + mathOperation(arg1, arg2, operation));
+      console.log(`Результат операции: ${mathOperation(10, 50, "divide")}`);
+    </script>
+    <script>
+      /*
+      //7. Сравнить null и 0
+      console.log(null > 0); // false
+      console.log(null == 0); // false
+      console.log(null >= 0); // true
+      console.log(null < 0); // false
+      console.log(null <= 0); // true
+      console.log(null === 0); // false
+      */
+    </script>
+    <script>
+      //8.С помощью рекурсии организовать функцию возведения числа в степень.
+      function power(val, pow) {
+        if (pow === 1) {
+          return val;
+        }
+
+        if (pow > 0) {
+          // let current = val * power(val, pow - 1);
+          // console.log(current);
+          return val * power(val, pow - 1);
+        } else if (pow < 0) {
+          // let current = (1 / val) * power(val, pow + 1);
+          // console.log(current);
+          return (1 / val) * power(val, pow + 1);
+        } else {
+          return 1;
+        }
+      }
+      console.log(power(0, 5));
+    </script>
+  </body>
+</html>
