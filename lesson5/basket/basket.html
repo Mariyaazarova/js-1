@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="catalog"></div>
+    <script>
+      const product = [
+        { name: "Apple", price: 10, country: "Russia", count: 2 },
+        { name: "Banana", price: 20, country: "Equador", count: 1 },
+        { name: "Pear", price: 30, country: "Russia", count: 3 },
+        //{ name: "Orange", price: 35, country: "Egypt", count: 5 },
+      ];
+      const content = document.querySelector(".catalog");
+
+      for (let i = 0; i < product.length; i++) {
+        const block = document.createElement("div");
+        block.innerHTML = `name: ${product[i].name} _ price: ${product[i].price} _ country: ${product[i].country} _ count: ${product[i].count};`;
+        content.appendChild(block);
+        window.onload = function () {
+          if (i >= 0) {
+            function countBasketPrice(basket) {
+              let sum = 0;
+
+              for (i = 0; i < basket.length; i++) {
+                let name_i = 0;
+                sum_i = basket[i].price * basket[i].count;
+                sum += sum_i;
+              }
+              return sum;
+            }
+            alert(
+              `В карзине: ${
+                product.length
+              } товар(а) на сумму ${countBasketPrice(product)} рублей`
+            );
+          } else {
+            alert("Карзина пустая");
+          }
+        };
+        content.appendChild(block);
+      }
+    </script>
+  </body>
+</html>

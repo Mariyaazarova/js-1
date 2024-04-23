@@ -1,0 +1,11 @@
+[user]
+	name = Maria
+	email = mariyaazarova@inbox.ru
+[alias]
+	co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short	
+	ps = push origin main --tag
+	pl = pull origin main --tag

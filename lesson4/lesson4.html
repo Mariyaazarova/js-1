@@ -26,6 +26,43 @@
       arr([5, 20, 250, 15000, 10000]);
     </script>
  -->
+    <script>
+      const testBasket = [
+        { name: "Apple", price: 10, country: "Russia", count: 2 },
+        { name: "Banana", price: 20, country: "Equador", count: 1 },
+        { name: "Pear", price: 30, country: "Russia", count: 3 },
+        { name: "Orange", price: 35, country: "Egypt", count: 5 },
+      ];
+      /* 
+      const simpleBasket = [
+        { name: "Apple", price: 10, country: "Russia" },
+        { name: "Banana", price: 20, country: "Equador" },
+        { name: "Pear", price: 30, country: "Russia" },
+        { name: "Orange", price: 35, country: "Egypt" },
+      ]; */
+
+      function countBasketPrice(basket) {
+        let sum = 0;
+        for (let i = 0; i < basket.length; i++) {
+          let name_i = 0;
+          sum_i = basket[i].price * basket[i].count;
+          sum += sum_i;
+        }
+        return sum;
+      }
+      console.log(countBasketPrice(testBasket));
+      /*  function countBasketPrice(prices) {
+              let sum = 0;
+              for (let count of Object.values(prices)) {
+                sum += count;
+              }
+              return sum;
+            }
+            console.log(countBasketPrice(prices));
+            //Object.values(obj) – возвращает массив значений.
+
+            // console.log(countBasketPrice(products)); */
+    </script>
     <!--   <script>
       // 1. Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999,
       // мы должны получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки и сотни.
